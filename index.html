@@ -1,0 +1,56 @@
+<title>محاسبه امتیازات</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+</head>
+<body>
+<div class="row col-5 m-5">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">team_1:</th>
+            <th scope="col"> team_2:</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><input type="number" id="team1"/></td>
+            <td><input type="number" id="team2"/></td>
+        </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-outline-success" onclick="sum()">محاسبه</button>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col"><h3>team1:</h3></th>
+            <th scope="col"><h3>team2:</h3></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><input type="number" id="demo2" value=0 readonly/></td>
+            <td><input type="number" id="demo3" value=0 readonly/></td>
+        </tr>
+        </tbody>
+    </table>
+    </div>
+
+<script type="text/javascript">
+    function sum() {
+        var fn, ln;
+        t1 = document.getElementById("team1").value;
+        t2 = document.getElementById("team2").value;
+        past_value_1 = document.getElementById("demo2").value;
+        past_value_2 = document.getElementById("demo3").value;
+        result_t1 = (parseFloat(t1) + parseFloat(past_value_1));
+        result_t2 = (parseFloat(t2) + parseFloat(past_value_2));
+        document.getElementById("demo2").value = result_t1;
+        document.getElementById("demo3").value = result_t2;
+    }
+</script>
+</body>
+</html>
