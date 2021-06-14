@@ -7,7 +7,7 @@
           integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 </head>
 <body>
-<div class="row col-5 m-5">
+<div class="row col-10 m-5">
     <table class="table table-striped">
         <thead>
         <tr>
@@ -37,11 +37,33 @@
         </tr>
         </tbody>
     </table>
+    <div class="row">
+    <p class="col-3"> اختلاف: <input type="number" id="ekhtelaf" value="0" readonly/> </p>
+    <h5 class="col-9">تاریخچه :
+      <table class="table table-striped">
+          <thead>
+          <tr>
+              <th scope="col">team_1:</th>
+              <th scope="col"> team_2:</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td id="history1"></td>
+         <td id="history2"></td>
+          </tr>
+          </tbody>
+      </table>
+    </h5>
+    <div>
     </div>
 
 <script type="text/javascript">
+var list1 = [];
+var list2 = [];
     function sum() {
-        var fn, ln;
+        var fn, ln, ekhtelaf, value1, value2, i, text;
+
         t1 = document.getElementById("team1").value;
         t2 = document.getElementById("team2").value;
         past_value_1 = document.getElementById("demo2").value;
@@ -50,6 +72,23 @@
         result_t2 = (parseFloat(t2) + parseFloat(past_value_2));
         document.getElementById("demo2").value = result_t1;
         document.getElementById("demo3").value = result_t2;
+        ekhtelaf = result_t1 - result_t2;
+        document.getElementById("ekhtelaf").value = ekhtelaf;
+        list1.push(result_t1);
+        list2.push(result_t2);
+        len = list1.length;
+        text = "<ul>";
+        for (i = 0; i < len; i++){
+          text += "<li>" + list1[i] + "</li>" ;
+        }
+        text += "</ul>";
+        document.getElementById("history1").innerHTML = text;
+        len2 = list2.length;
+        text2 = "<ul>";
+        for (i = 0; i < len2; i++){
+          text2 += "<li>" + list2[i] + "</li>";
+        }
+        document.getElementById("history2").innerHTML = text2;
  }
 </script>
 </body>
