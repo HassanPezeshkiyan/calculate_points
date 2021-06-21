@@ -5,13 +5,15 @@
     <meta charset="UTF-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <button class="btn btn-secondary" onclick="myFunction()">Dark Mode/Light Mode</button>
 <div class="row col-10 m-5">
     <table class="table table-striped">
         <thead>
         <tr>
-            <th scope="col">team_1:</th>
+            <th scope="col" >team_1:</th>
             <th scope="col"> team_2:</th>
         </tr>
         </thead>
@@ -22,12 +24,12 @@
         </tr>
         </tbody>
     </table>
-    <button class="btn btn-outline-success" onclick="sum()">محاسبه</button>
+    <button class="btn btn-success col-2" onclick="sum()">محاسبه</button>
     <table class="table table-striped">
         <thead>
         <tr>
-            <th scope="col"><h3>team1:</h3></th>
-            <th scope="col"><h3>team2:</h3></th>
+            <th scope="col"><h3 class="text">team1:</h3></th>
+            <th scope="col"><h3 class="text">team2:</h3></th>
         </tr>
         </thead>
         <tbody>
@@ -38,8 +40,10 @@
         </tbody>
     </table>
     <div class="row">
-    <p class="col-3"> اختلاف: <input type="number" id="ekhtelaf" value="0" readonly/> </p>
-    <h5 class="col-9">تاریخچه :
+      <p class="col-9"> اختلاف: <input type="number" id="ekhtelaf" value="0" readonly/> </p>
+    <button class="col-3 btn-danger" onclick="zero()">صفر کردن</button>
+  </div>
+    <h5>تاریخچه :</h5>
       <table class="table table-striped">
           <thead>
           <tr>
@@ -54,9 +58,8 @@
           </tr>
           </tbody>
       </table>
-    </h5>
-    <div>
     </div>
+</div>
 
 <script type="text/javascript">
 var list1 = [];
@@ -90,6 +93,17 @@ var list2 = [];
         }
         document.getElementById("history2").innerHTML = text2;
  }
+ function myFunction() {
+  var element = document.body;
+  element.classList.toggle("dark-mode");
+}
+function zero(){
+  document.getElementById("team1").value=0;
+document.getElementById("team2").value=0;
+document.getElementById("demo2").value=0;
+document.getElementById("demo3").value=0;
+document.getElementById("ekhtelaf").value=0;
+}
 </script>
 </body>
 </html>
