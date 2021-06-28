@@ -64,14 +64,15 @@
 <script type="text/javascript">
 var list1 = [];
 var list2 = [];
-    function sum() {
-        var fn, ln, ekhtelaf, value1, value2, i, text;
-
-        t1 = document.getElementById("team1").value;
-        t2 = document.getElementById("team2").value;
-        past_value_1 = document.getElementById("demo2").value;
-        past_value_2 = document.getElementById("demo3").value;
-        result_t1 = (parseFloat(t1) + parseFloat(past_value_1));
+var result_t1, result_t2;
+function sum()
+ {   
+     var fn, ln, ekhtelaf, value1, value2, i, text;
+     t1 = document.getElementById("team1").value;
+     t2 = document.getElementById("team2").value;
+     past_value_1 = document.getElementById("demo2").value;
+     past_value_2 = document.getElementById("demo3").value;
+     result_t1 = (parseFloat(t1) + parseFloat(past_value_1));
         result_t2 = (parseFloat(t2) + parseFloat(past_value_2));
         document.getElementById("demo2").value = result_t1;
         document.getElementById("demo3").value = result_t2;
@@ -93,36 +94,36 @@ var list2 = [];
         }
         document.getElementById("history2").innerHTML = text2;
  }
- function myFunction() {
+function myFunction()
+ {
   var element = document.body;
-  element.classList.toggle("dark-mode");
-}
-function zero(){
-    var team1sum, team2sum;
-document.getElementById("demo2").value = team1sum;
-document.getElementById("demo3").value = team2sum;
-documnet.getElementById("history1").value = team1sum;    
-    documnet.getElementById("history2").value = team2sum;
-document.getElementById("team1").value=0;
-document.getElementById("team2").value=0;
-document.getElementById("demo2").value=0;
-document.getElementById("demo3").value=0;
-document.getElementById("ekhtelaf").value=0;
-}
+  element.classList.toggle("dark-mode");}
+function zero()
+  {
+  document.getElementById("team1").value=0;
+  document.getElementById("team2").value=0;
+  document.getElementById("demo2").value=0;
+  document.getElementById("demo3").value=0;
+  document.getElementById("ekhtelaf").value=0;
+  list1=[];
+  list2=[];
+  document.getElementById("history1").innerHTML = "نتیجه قبلی:" + result_t1
+  document.getElementById("history2").innerHTML = "نتیجه قبلی:" + result_t2;
+  }
 </script>
 <style>
-body {
+body
+  {
   padding: 25px;
   background-color: white;
   color: black;
   font-size: 25px;
-}
+  }
 
 .dark-mode {
   background-color: #16a085 ;
 
 }
-
 </style>
 </body>
 </html>
